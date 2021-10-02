@@ -10,8 +10,12 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "mobx": "^6.3.3",
+    "mobx-persist": "^0.4.1",
+    "mobx-react-lite": "^3.2.1",
     "react": "17.0.2",
-    "react-native": "0.65.1"
+    "react-native": "0.65.1",
+    "react-native-navigation": "^7.21.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
