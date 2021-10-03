@@ -4,8 +4,10 @@ import {NavigationFunctionComponent} from 'react-native-navigation';
 import {welcomeStyles} from '../styles/welcomeStyles';
 import TextLato from '../utils/components/textLato';
 import {colors} from '../constants/theme';
+import { useUserStore } from '../context/user.store';
 
 const WelcomePage: NavigationFunctionComponent = props => {
+const {user} = useUserStore()
   return (
     <View style={welcomeStyles.containerStyles.root}>
     <View style={{flex:0.04}}/>
