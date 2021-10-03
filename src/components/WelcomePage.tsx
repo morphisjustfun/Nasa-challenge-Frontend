@@ -6,7 +6,7 @@ import TextLato from '../utils/components/textLato';
 import {colors} from '../constants/theme';
 import {useUserStore} from '../context/user.store';
 import RNLocation, {Location, Subscription} from 'react-native-location';
-import {getLastLocation, geoDecode} from '../utils/utils';
+import {getLastLocation, geoDecode, findState} from '../utils/utils';
 import pages from '../constants/pages';
 
 const WelcomePage: NavigationFunctionComponent = props => {
@@ -19,11 +19,11 @@ const WelcomePage: NavigationFunctionComponent = props => {
       lastLocation.latitude,
       lastLocation.longitude,
     );
-    const region = address.address?.region;
-    if (region === undefined || region === '') {
+    const state = address.address?.state;
+    if (state === undefined || state === '') {
       setUser({...user, location: 'No definido'});
-    } else if (region !== user.location) {
-      setUser({...user, location: address.address?.region!});
+    } else if (state !== user.location) {
+      setUser({...user, location: findState(state)});
     }
   };
 

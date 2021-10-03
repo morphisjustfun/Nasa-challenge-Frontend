@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { RefObject, MutableRefObject } from 'react';
 import {useUserStore} from '../../context/user.store';
 import {
   Text,

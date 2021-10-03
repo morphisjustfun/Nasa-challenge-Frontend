@@ -13,12 +13,12 @@ const containerStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   checkBoxContainer: {
-    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 20,
     marginHorizontal: 48,
+    marginBottom: 30,
   },
   checkBoxContainerElementLeft: {
     flex: 1,
@@ -70,6 +70,19 @@ const textStyles = StyleSheet.create({
     backgroundColor: colors.buttonPrimary,
     marginHorizontal: 25,
     marginTop: 18,
+  },
+  pickerElement: {
+    marginHorizontal: 48,
+    marginVertical: 20,
+    backgroundColor: colors.backgroundColor,
+    borderRadius: 20,
+    zIndex: 10,
+  },
+  dropdownElement: {
+    borderWidth: 0,
+    borderRadius: 20,
+    textAlign: 'center',
+    zIndex: 10,
   },
 });
 

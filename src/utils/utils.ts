@@ -1,4 +1,5 @@
 import {Location} from 'react-native-location';
+import {STATES} from '../constants/states';
 
 export interface GeoDecode {
   place_id?: number;
@@ -64,4 +65,19 @@ export const getConvertedLocation = (location: Address | undefined) => {
     return `${location.road}, ${location.city}, ${location.country}`;
   }
   return '';
+};
+
+export const normalizeString = (target: string) => {
+  let result = target.replace(/\s+/g, '');
+  result = result.toUpperCase();
+  return result;
+};
+
+export const findState = (target: string) => {
+  for (const state in STATES) {
+    if (normalizeString(STATES[state]) === normalizeString(target)) {
+      return STATES[state];
+    }
+  }
+  return 'LIMA METROPOLITANA';
 };

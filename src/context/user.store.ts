@@ -3,10 +3,8 @@ import {makeObservable, action, observable} from 'mobx';
 
 export interface User {
   name: string | 'No definido';
-  gender: string | 'No definido';
-  age: number | 'No definido';
   covidBefore: boolean | 'No definido';
-  dosesVaccine: 1 | 2 | 'No definido';
+  dosesVaccine: 0 | 1 | 2 | 'No definido';
   brandVaccine: 'PFIZER' | 'ASTRAZENECA' | 'SINOPHARM' | 'No definido';
   location: string | 'No definido'
 }
@@ -16,9 +14,7 @@ export type Language = 'spanish' | 'english';
 class UserStore {
   risk = 0;
   user: User = {
-    age: 'No definido',
     name: 'No definido',
-    gender: 'No definido',
     covidBefore: 'No definido',
     brandVaccine: 'No definido',
     dosesVaccine: 'No definido',
