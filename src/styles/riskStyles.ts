@@ -20,6 +20,11 @@ const containerStyles = StyleSheet.create({
      flexDirection: 'row',
      justifyContent:'center',
      alignItems:'center'
+  },
+  adviceContainer:{
+     flex: 0.35,
+     justifyContent: 'flex-end',
+     alignItems: 'center',
   }
 });
 
@@ -34,6 +39,12 @@ const textStyles = StyleSheet.create({
       fontSize: 16,
       textAlign:'center',
       marginHorizontal: 20
+   },
+   advice:{
+      fontSize: 16,
+      textAlign:'center',
+      marginHorizontal: 20,
+      marginVertical: 40
    }
 })
 

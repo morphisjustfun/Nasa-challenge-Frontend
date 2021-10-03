@@ -61,25 +61,32 @@ const RiskPage = () => {
             color: riskProps.color,
             fontSize: typeof risk === 'string' ? 30 : 80,
             textAlign: 'center',
-            marginBottom: 30
+            marginBottom: 30,
           }}
         />
         <View style={riskStyles.containerStyles.labelColorsContainer}>
-        <TextLato
-          text="Bajo"
-          typography="Lato-Regular"
-          style={riskStyles.textStyles.labelColor}
-        />
-        <Image
-          source={require('../assets/images/riskColors.png')}
-          resizeMode="contain"
-        />
-        <TextLato
-          text="Alto"
-          typography="Lato-Regular"
-          style={riskStyles.textStyles.labelColor}
-        />
+          <TextLato
+            text="Bajo"
+            typography="Lato-Regular"
+            style={riskStyles.textStyles.labelColor}
+          />
+          <Image
+            source={require('../assets/images/riskColors.png')}
+            resizeMode="contain"
+          />
+          <TextLato
+            text="Alto"
+            typography="Lato-Regular"
+            style={riskStyles.textStyles.labelColor}
+          />
         </View>
+      </View>
+      <View style={riskStyles.containerStyles.adviceContainer}>
+        <TextLato
+          text="Recuerda seguir cuidándote"
+          typography="Lato-BoldItalic"
+          style={riskStyles.textStyles.advice}
+        />
       </View>
     </View>
   );
