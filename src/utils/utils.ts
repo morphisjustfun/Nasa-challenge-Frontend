@@ -1,5 +1,6 @@
 import {Location} from 'react-native-location';
 import {STATES} from '../constants/states';
+import { colors } from '../constants/theme';
 
 export interface GeoDecode {
   place_id?: number;
@@ -81,3 +82,23 @@ export const findState = (target: string) => {
   }
   return 'LIMA METROPOLITANA';
 };
+
+export const getFormattedRisk = (risk: number | string) => {
+    if (typeof risk === 'string') {
+      return {label: risk, color: colors.trueBlack};
+    }
+    const percentage = parseInt(((risk / 7) * 100).toFixed(0));
+    let color = '';
+    if (percentage <= 20 && percentage >= 0) {
+      color = colors.risk1;
+    } else if (percentage <= 40 && percentage > 20) {
+      color = colors.risk2;
+    } else if (percentage <= 60 && percentage > 40) {
+      color = colors.risk3;
+    } else if (percentage <= 80 && percentage > 60) {
+      color = colors.risk4;
+    } else if (percentage <= 100 && percentage > 80) {
+      color = colors.risk5;
+    }
+    return {label: `${percentage}%`, color: color};
+  };

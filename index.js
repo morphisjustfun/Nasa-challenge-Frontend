@@ -5,17 +5,20 @@ import {Navigation} from 'react-native-navigation';
 import pages from './src/constants/pages';
 import PreRegistrationPage from './src/components/PreRegistration';
 import RegionstrationPage from './src/components/RegistrationPage';
+import RiskPage from './src/components/RiskPage';
 
-Navigation.registerComponent(pages.APP,() => App);
-Navigation.registerComponent(pages.WELCOME_PAGE,() => WelcomePage);
-Navigation.registerComponent(pages.PRE_REGISTRATION_PAGE, () => PreRegistrationPage);
+Navigation.registerComponent(pages.APP, () => App);
+Navigation.registerComponent(pages.WELCOME_PAGE, () => WelcomePage);
+Navigation.registerComponent(
+  pages.PRE_REGISTRATION_PAGE,
+  () => PreRegistrationPage,
+);
 Navigation.registerComponent(pages.REGISTRATION_PAGE, () => RegionstrationPage);
+Navigation.registerComponent(pages.RISK_PAGE, () => RiskPage);
 
 Navigation.events().registerAppLaunchedListener(() => {
-   Navigation.setRoot(
-      splashRoot
-   )
-})
+  Navigation.setRoot(splashRoot);
+});
 
 Navigation.setDefaultOptions({
   topBar: {
@@ -24,23 +27,23 @@ Navigation.setDefaultOptions({
 });
 
 const splashRoot = {
-   root: {
-      component: {
-         name: pages.APP
-      }
-   }
-}
+  root: {
+    component: {
+      name: pages.APP,
+    },
+  },
+};
 
 export const mainRoot = {
-      root:{
-         stack: {
-            children: [
-               {
-                  component: {
-                     name: pages.WELCOME_PAGE
-                  }
-               }
-            ]
-         }
-      }
-   }
+  root: {
+    stack: {
+      children: [
+        {
+          component: {
+            name: pages.WELCOME_PAGE,
+          },
+        },
+      ],
+    },
+  },
+};

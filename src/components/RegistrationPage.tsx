@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {NavigationFunctionComponent} from 'react-native-navigation';
+import {NavigationFunctionComponent, Navigation} from 'react-native-navigation';
 import {
   View,
   Text,
@@ -17,12 +17,13 @@ import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import KeyboardAvoidingWrapper from '../utils/components/keyboardAvoidingWrapper';
 import Customdropdown from '../utils/components/customDropdown';
 import {STATES} from '../constants/states';
+import pages from '../constants/pages';
 
 const getTruth = (value: any, reverse: boolean) => {
   return value === undefined ? false : reverse ? !value : value;
 };
 
-const RegionstrationPage: NavigationFunctionComponent = () => {
+const RegionstrationPage: NavigationFunctionComponent = props => {
   const {user, setUser} = useUserStore();
 
   const [dropOpen, setDropOpen] = useState(false);
@@ -197,14 +198,8 @@ const RegionstrationPage: NavigationFunctionComponent = () => {
               typography="Lato-Regular"
               placeholder={state}
               style={{
-                ...registrationStyles.textStyles.dropdownElement,
-                marginBottom: dropBrandOpen ? 160 : 0,
-                backgroundColor:
-                  doses === 0
-                    ? colors.blackPlaceholder
-                    : colors.backgroundColor,
+                ...registrationStyles.textStyles.dropdownElement
               }}
-              disabled={doses === 0}
               onOpen={() => setDropOpen(false)}
               listMode="MODAL"
             />
@@ -229,16 +224,21 @@ const RegionstrationPage: NavigationFunctionComponent = () => {
                     dosesVaccine: doses,
                   });
                 } else {
-                  // @ts-ignore
                   setUser({
                     ...user,
                     name: name,
                     location: state,
                     covidBefore: covid,
+                    // @ts-ignore
                     brandVaccine: brand,
                     dosesVaccine: doses,
                   });
                 }
+                Navigation.push(props.componentId, {
+                  component: {
+                    name: pages.RISK_PAGE,
+                  },
+                });
               }
             }}>
             <TextLato text="LISTO" typography="Lato-Regular" />
