@@ -9,36 +9,37 @@ const containerStyles = StyleSheet.create({
     alignContent: 'center',
   },
   rootContent: {
-    flex: 0.85,
+    flex: 0.3,
+    justifyContent: 'center',
   },
   checkBoxContainer: {
-     flex:1,
-     flexDirection: 'row',
-     justifyContent: 'center',
-     alignItems: 'center',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 20,
+    marginHorizontal: 48,
   },
-  checkBoxContainerElementLeft:{
-     flex:0.34,
-     borderTopLeftRadius: 10,
-     borderBottomLeftRadius:10,
-     flexDirection: 'row',
-     justifyContent: 'flex-end',
-     alignItems: 'center',
-     backgroundColor: colors.backgroundColor,
-     paddingVertical: 14,
-     paddingRight:40
+  checkBoxContainerElementLeft: {
+    flex: 1,
+    borderTopLeftRadius: 20,
+    borderBottomLeftRadius: 20,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.backgroundColor,
+    paddingVertical: 13,
   },
-  checkBoxContainerElementRight:{
-     flex:0.34,
-     borderTopRightRadius: 10,
-     borderBottomRightRadius:10,
-     flexDirection: 'row',
-     justifyContent: 'flex-start',
-     alignItems: 'center',
-     backgroundColor: colors.backgroundColor,
-     paddingVertical: 14,
-     paddingLeft:40
-  }
+  checkBoxContainerElementRight: {
+    flex: 1,
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 20,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.backgroundColor,
+    paddingVertical: 13,
+  },
 });
 
 const textStyles = StyleSheet.create({
@@ -55,7 +56,7 @@ const textStyles = StyleSheet.create({
     marginVertical: 20,
     padding: 10,
     marginBottom: 30,
-    borderRadius: 10,
+    borderRadius: 20,
     backgroundColor: colors.backgroundColor,
     textAlign: 'center',
     color: colors.trueBlack,
