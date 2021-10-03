@@ -1,6 +1,12 @@
 import React from 'react';
 import {useUserStore} from '../../context/user.store';
-import {Text, StyleSheet, TextStyle} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  TextStyle,
+  TextInput,
+  TextInputProps,
+} from 'react-native';
 
 interface TextLatoProps {
   style?: TextStyle;
@@ -15,11 +21,14 @@ interface TextLatoProps {
     | 'Lato-Regular'
     | 'Lato-Thin'
     | 'Lato-ThinItalic';
-    text: string
+  props: TextInputProps;
 }
 
-const TextLato = (props: TextLatoProps) => {
-  return <Text style={{fontFamily: props.typography,...props.style}}>{props.text}</Text>;
+const TextInputLato = (props: TextLatoProps) => {
+  // @ts-ignore
+  let oldStyle = {...props.props.style};
+  oldStyle.fontFamily = props.typography;
+  return <TextInput {...props.props} style={oldStyle}/>;
 };
 
-export default TextLato;
+export default TextInputLato;

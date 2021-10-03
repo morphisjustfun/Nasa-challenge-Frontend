@@ -8,6 +8,7 @@ export interface User {
   covidBefore: boolean | 'No definido';
   dosesVaccine: 1 | 2 | 'No definido';
   brandVaccine: 'PFIZER' | 'ASTRAZENECA' | 'SINOPHARM' | 'No definido';
+  location: string | 'No definido'
 }
 
 export type Language = 'spanish' | 'english';
@@ -21,6 +22,7 @@ class UserStore {
     covidBefore: 'No definido',
     brandVaccine: 'No definido',
     dosesVaccine: 'No definido',
+    location: 'No definido'
   };
   language: Language = 'spanish';
 
