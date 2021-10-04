@@ -4,7 +4,9 @@
 
 ## Sumary
 Multiplatform app to calculate the risk of getting COVID19 using a novel model
+
 The model can be found in [model](https://github.com/morphisjustfun/NASA_CHALLENGE_UTILS)
+
 The mockup can be found in [mockup](https://www.figma.com/file/Q0NiCGksov3B7FWFMnpVT0/SPACE-CHALLENGE)
 
 ## Resources
